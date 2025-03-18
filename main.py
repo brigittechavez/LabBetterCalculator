@@ -4,7 +4,7 @@ def addmultiplenumbers (numbers):
   for num in numbers:
     total += num
 
-  return total
+  return total #recordar siempre fuera del bucle para que funcione :p
   
 def multiplymultiplenumbers (numbers):
 
@@ -67,12 +67,15 @@ def main():
 
     elif opcion == "3":
       num = float(input("Ingrese un número para verificar si es par: "))
-      resultado = isiteven(num)
-      if resultado:     
-        print(f"{num} es par: {resultado}")
-
+      
+      if isitaninteger(num):
+        resultado = isiteven(num)
+        if resultado:
+          print(f"El número {num} es par.")
+        else:
+          print(f"El número {num} es impar.")
       else:
-        print(f"El número {num} NO es par o entero.")
+        print(f"{num} no es un número entero, por lo que no se puede verificar si es par.")
 
     elif opcion =="4":
       num = float(input("Ingrese un número: "))
@@ -84,10 +87,12 @@ def main():
                 
     elif opcion == "5":
       print("¡Gracias por usar la Calculadora Básica!")
+      break
             
             
     else:
       print("Opción inválida. Por favor seleccione una opción válida (1-5).")
+      
     
 
       
